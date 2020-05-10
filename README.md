@@ -119,6 +119,118 @@ To see the list of clients connected to server
 >CLIENT GETNAME  
 >CLINET KILL ip:port  
 
+**Data types in Redis**  
+Lists are the common data type in redis to hold list of values  
+To create List , LPUSH create new list for first time  
+> LPUSH friends bob  
+
+To add element to existing list , do LPUSH again on existing list  or RPUSH to add from right side  
+>LPUSH friends fred  
+>RPUSH friends tom 
+
+To see all elements in the list   
+>LRANGE friends 0 -1  
+
+To see specific elements in a range  
+>LRANGE friends 1 2  
+
+To find the length of list 
+>LLEN friends  
+
+To remove elements from list from left side and right side  
+>LPOP friends
+>RPOP friends
+
+To insert element at specific index of the list 
+>LINSERT friends BEFORE "bob" "kevin"  
+
+Sets are un-ordered collection of elements and no duplicates allowed  
+
+To create a new set 
+>SADD carmakes "Toyota"    
+>SADD carmakes "Ford"  
+>SADD carmakes "Chevy"  
+>SADD carmakes "Honda"  
+
+To check if a member exists in the set 
+>SISMEMBER carmakes "Honda"  
+>SISMEMBER carmakes "Hondas"  
+
+To see the all the members in the set
+>SMEMBERS carmakes  
+
+To find the size of the set 
+>SCARD carmakes  
+
+To move member from one set to another set
+>SADD mycars "Acura"  
+>SMOVE carmakes mycars "Toyota"  
+>SMEMBERS mycars  
+
+To union and intersect two sets 
+>SUNION carmakes mycars  
+>SDIFF carmakes mycars  
+
+To get the random member from the set 
+>SRANDMEMBER carmakes  
+>SRANDMEMBER carmakes 2  
+
+To remove the random member from the set
+>SPOP carmakes  
+
+Sorted sets are sorted based on score , which every member associates with score.  
+Score is required.  
+if you add member without score will throw error.  
+
+To create new Sorted set 
+>ZADD people 1970 "john Doe"  
+>ZADD people 1985 "sAM SIMITH"  
+>ZADD people 1990 "jen"  
+
+To see the all the members in sorted set                                                                   
+>ZRANGE people 0 -1    
+>ZRANGEBYSCORE people 1970 1986    
+
+To see the rank of member    
+>ZRANK people "john Doe"  
+
+To see the size of sorted set     
+>ZCARD people  
+
+To increment the score of member  
+>ZINCRBY people 1 "john Doe"  
+>ZSCORE  people "john Doe"  
+
+Hashes are maps between string key and string value , similar to JSON  
+
+To create a new hash  
+>HSET user:john name "John Doe"  
+>HGET user:john name
+
+To set multiple fields to hash  
+> HMSET user:kate name "Kate Simith" email "kate@gamil.com" age "30"    
+>HGET user:kate age  
+>HGET user:kate name  
+>HMGET user:kate name email age 
+>HGETALL user:kate  
+
+To get only keys or values  
+>HKEYS user:kate  
+>HVALS user:kate  
+
+To increment any field value  
+>HINCRBY user:kate age 1  
+
+To delete a field from hash  
+>HDEL user:kate age  
+
+To get the size of the hash
+> HLEN user:kate     
+
+
+
+
+
 
 
 

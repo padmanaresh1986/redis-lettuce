@@ -81,6 +81,47 @@ To set value along with expiry , NX works only when key does not exists
 To remove expiry on key 
 >PERSIST key1 
 
+To scan the keys based on index
+>MSET key1 1 key2 2 key3 3 key4 4 key5 5 key6 6 key7 7 key8 8 key9 9 key10 10 key11 11 key12 12 key13 13    
+>SCAN 0  
+>SCAN 13  
+
+To specify the count in scan (default 10)  
+>SCAN 0 COUNT 3  
+
+To scan match specific keys  
+>SCAN 0 MATCH key1*  
+
+To see all keys at a time which matching the pattern  
+>KEYS *  
+>KEYS key1*  
+
+**Client and Config Commands**  
+To get the server configuration 
+>CONFIG GET \*    
+>CONFIG GET \*max\*  
+>CONFIG GET PORT  
+
+To set the server configuration with out restart redis
+>CONFIG SET lua-time-limit 6000  
+
+To see all information about server  memory,clients,cpu..  
+>INFO  
+>INFO memory  
+
+To see the all commands 
+>COMMAND  
+>COMMAND INFO readonly  
+
+To see the list of clients connected to server  
+>CLIENT LIST  
+>CLIENT SETNAME bar  
+>CLIENT GETNAME  
+>CLINET KILL ip:port  
+
+
+
+
 
 
 

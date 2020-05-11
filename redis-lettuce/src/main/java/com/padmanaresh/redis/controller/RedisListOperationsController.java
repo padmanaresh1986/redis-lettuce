@@ -6,7 +6,6 @@ import javax.annotation.Resource;
 
 @RestController
 public class RedisListOperationsController {
-
     // inject the template as ListOperations
     @Resource(name="stringRedisTemplate")
     private ListOperations<String, String> listOps;

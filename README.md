@@ -230,8 +230,8 @@ To get the size of the hash
 
 
 **Useful Links**  
-https://docs.spring.io/spring-data/redis/docs/2.2.7.RELEASE/reference/html/#redis
-https://medium.com/@hulunhao/how-to-use-redis-template-in-java-spring-boot-647a7eb8f8cc
+https://docs.spring.io/spring-data/redis/docs/2.2.7.RELEASE/reference/html/#redis  
+https://medium.com/@hulunhao/how-to-use-redis-template-in-java-spring-boot-647a7eb8f8cc  
 
 
 

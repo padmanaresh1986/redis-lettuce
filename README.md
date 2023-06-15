@@ -234,6 +234,29 @@ https://docs.spring.io/spring-data/redis/docs/2.2.7.RELEASE/reference/html/#redi
 https://medium.com/@hulunhao/how-to-use-redis-template-in-java-spring-boot-647a7eb8f8cc  
 
 
+Credits to Rockey Bhatia for below blog post
+
+𝐖𝐡𝐚𝐭 𝐦𝐚𝐤𝐞𝐬 𝐑𝐞𝐝𝐢𝐬 𝐢𝐧𝐜𝐫𝐞𝐝𝐢𝐛𝐥𝐲 𝐟𝐚𝐬𝐭?
+
+
+Redis (Remote Dictionary Server) is known for its exceptional speed and performance. There are several reasons why Redis is considered fast:
+
+𝙄𝒏-𝒎𝙚𝒎𝙤𝒓𝙮 𝙙𝒂𝙩𝒂 𝒔𝙩𝒐𝙧𝒂𝙜𝒆: Redis is primarily an in-memory data store, which is stored and accessed directly from the server's RAM, eliminating disk I/O operations significantly slower than memory access, resulting in faster data retrieval and manipulation.
+
+𝙎𝒊𝙢𝒑𝙡𝒆 𝒅𝙖𝒕𝙖 𝙨𝒕𝙧𝒖𝙘𝒕𝙪𝒓𝙚𝒔: Redis supports various data structures like strings, lists, sets, hashes, and sorted sets. These data structures are optimized for performance and allow for efficient operations, making Redis a highly performant key-value store.
+
+𝙎𝒊𝙣𝒈𝙡𝒆-𝒕𝙝𝒓𝙚𝒂𝙙𝒆𝙙 𝙖𝒓𝙘𝒉𝙞𝒕𝙚𝒄𝙩𝒖𝙧𝒆: Redis follows a single-threaded, event-driven architecture eliminating the need for context switching and locking mechanisms, reducing overhead and improving overall performance. It also allows Redis to handle many concurrent requests without the overhead of managing multiple threads.
+
+𝘼𝒔𝙮𝒏𝙘𝒉𝙧𝒐𝙣𝒐𝙪𝒔 𝒐𝙥𝒆𝙧𝒂𝙩𝒊𝙤𝒏𝙨: Redis supports asynchronous operations, allowing clients to send multiple commands without waiting for a response, and improves throughput by reducing the time spent waiting for network round trips.
+
+𝙈𝒊𝙣𝒊𝙢𝒂𝙡 𝙙𝒊𝙨𝒌 𝒑𝙚𝒓𝙨𝒊𝙨𝒕𝙚𝒏𝙘𝒆: Although Redis is primarily an in-memory database, it provides options for disk persistence to ensure data durability. However, Redis uses an append-only file (AOF) and point-in-time snapshots rather than continuously writing data to disk, minimising disk I/O and maintaining high performance.
+
+𝙊𝒑𝙩𝒊𝙢𝒊𝙯𝒆𝙙 𝙙𝒂𝙩𝒂 𝒔𝙩𝒓𝙪𝒄𝙩𝒖𝙧𝒆𝙨 𝙖𝒏𝙙 𝙖𝒍𝙜𝒐𝙧𝒊𝙩𝒉𝙢𝒔: Redis is designed with performance in mind. It utilise efficient data structures and algorithms to achieve high-speed operations. For example, Redis cleverly uses data structures like skip lists and hash tables, which provide fast access and search capabilities.
+
+𝙉𝒐𝙣-𝙗𝒍𝙤𝒄𝙠𝒊𝙣𝒈 𝑰/𝑶: Redis uses non-blocking I/O operations, leveraging the asynchronous nature of modern operating systems, allowing Redis to efficiently handle many concurrent connections without being limited by traditional blocking I/O mechanisms.
+
+Overall, Redis combines several performance-oriented design choices, including in-memory storage, a single-threaded architecture, asynchronous operations, optimised data structures, and non-blocking I/O, to deliver exceptional speed and responsiveness.
+
 
 
 
